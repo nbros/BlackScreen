@@ -23,8 +23,14 @@
         ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BlackForm));
+            Timer = new System.Windows.Forms.Timer(components);
             SuspendLayout();
+            // 
+            // Timer
+            // 
+            Timer.Tick += Timer_Tick;
             // 
             // BlackForm
             // 
@@ -41,9 +47,12 @@
             WindowState = FormWindowState.Maximized;
             DoubleClick += BlackForm_DoubleClick;
             KeyDown += BlackForm_KeyDown;
+            MouseMove += BlackForm_MouseMove;
             ResumeLayout(false);
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer Timer;
     }
 }
